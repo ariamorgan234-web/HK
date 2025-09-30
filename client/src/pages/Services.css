@@ -1,0 +1,117 @@
+/* src/pages/Services.css */
+.services-page {
+  padding: 2rem 1rem;
+  background-color: #f9fafb; /* A very light grey background for the whole page */
+}
+
+.services-hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: white;
+  border-radius: 16px;
+  margin: 0 auto 3rem auto;
+  max-width: 1200px;
+}
+
+.services-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--dark-text, #333);
+  font-weight: 700;
+}
+
+.services-hero p {
+  font-size: 1.2rem;
+  color: var(--light-text, #666);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.services-grid-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.services-cta {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: var(--primary-gradient, #007bff);
+  color: white;
+  border-radius: 16px;
+  margin: 4rem auto 0 auto;
+  max-width: 1200px;
+}
+
+.services-cta h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.services-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-cta .cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: white;
+  color: var(--primary-color, #007bff);
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.services-cta .cta-button:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-page {
+    padding: 1rem;
+  }
+  .services-hero {
+    padding: 2.5rem 1rem;
+  }
+  .services-hero h1 {
+    font-size: 2.2rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .services-cta {
+    padding: 3rem 1.5rem;
+  }
+  .services-cta h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-hero h1 {
+    font-size: 2rem;
+  }
+  .services-hero p {
+    font-size: 1rem;
+  }
+}

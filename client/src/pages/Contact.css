@@ -1,0 +1,185 @@
+/* src/pages/Contact.css */
+
+/* Reusing the same variables from the root for design consistency */
+.contact-page {
+  --primary-gradient: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    #0056b3 100%
+  );
+  --success-bg: #d4edda;
+  --success-text: #155724;
+  --error-bg: #f8d7da;
+  --error-text: #721c24;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: calc(
+    100vh - 160px
+  ); /* Adjusted for typical header/footer height */
+  background-color: #f4f7f9; /* A subtle background color for the page */
+}
+
+.contact-form-container {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-strong);
+  overflow: hidden;
+}
+
+.contact-header {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-header h2 {
+  margin: 0 0 0.75rem 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.contact-header p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.contact-form {
+  padding: 2.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 90%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--background-light);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.status-message {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+}
+
+.status-message.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.status-message.error {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 1rem;
+    align-items: flex-start; /* Allow form to be at the top */
+  }
+
+  .contact-form-container {
+    margin-top: 1rem;
+  }
+
+  .contact-header {
+    padding: 1.5rem;
+  }
+
+  .contact-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0; /* Remove gap as groups have their own bottom margin */
+  }
+}

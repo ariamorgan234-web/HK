@@ -1,0 +1,184 @@
+/* src/pages/Login.css */
+
+/* Reusing the established design system variables */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f7f9; /* A clean, neutral background */
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional: Add a subtle background pattern or image */
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
+    center/cover;
+  opacity: 0.05; /* Make it very subtle */
+  z-index: 0;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+}
+
+.login-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-text);
+  font-weight: 700;
+}
+
+.login-header p {
+  color: var(--light-text);
+  font-size: 1rem;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--background-light);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: calc(50% + 8px); /* Aligns better with the input field */
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--light-text);
+  cursor: pointer;
+  font-size: 1.2rem; /* Larger icon for easier clicking */
+  line-height: 1;
+}
+
+.login-button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary-gradient, var(--primary-color));
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message-box {
+  color: var(--error-text, #721c24);
+  background-color: var(--error-bg, #f8d7da);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.login-footer p {
+  color: var(--light-text);
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 2rem 1.5rem;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  .login-page {
+    background: white;
+  }
+  .login-page::before {
+    opacity: 0; /* Hide background image on small screens for clarity */
+  }
+}

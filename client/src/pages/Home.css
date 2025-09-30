@@ -1,0 +1,324 @@
+/* src/pages/Home.css */
+
+/* --- Root Variables for Design System --- */
+:root {
+  --primary-color: #007bff;
+  --primary-gradient: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  --dark-text: #333;
+  --light-text: #555;
+  --background-light: #f8f9fa;
+  --border-radius: 8px;
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* New variables for the dark card theme */
+  --card-dark-bg: #1c1c1e;
+  --card-dark-text: #a0a0a5;
+  --card-dark-heading: #ffffff;
+  --card-border-highlight: #007bff;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  position: relative;
+  height: 90vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: url('https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
+    no-repeat center center/cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- General Section Styles --- */
+.page-section {
+  padding: 5rem 1rem;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark-text);
+  font-weight: 700;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--light-text);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Why Choose Us Section --- */
+.why-us-section {
+  background: #f8f9fa; /* Light gray background for this section */
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-strong);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark-text);
+}
+
+.feature-card p {
+  color: var(--light-text);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* --- Services Overview Section (Updated for Dark Theme) --- */
+.services-overview-section {
+  background: #ffffff;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.services-grid .dark-service-card:first-child {
+  grid-row: span 2 / auto;
+}
+
+.dark-service-card {
+  background: var(--card-dark-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dark-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.dark-service-card .service-image {
+  padding: 1rem 1rem 0 1rem;
+}
+
+.dark-service-card .service-image img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.dark-service-card .service-content {
+  padding: 1.5rem;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dark-service-card .service-content h3 {
+  font-size: 1.4rem;
+  margin: 0 0 0.75rem 0;
+  color: var(--card-dark-heading);
+  font-weight: 600;
+}
+
+.dark-service-card .service-content p {
+  color: var(--card-dark-text);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.dark-service-card.highlight-border {
+  border-top: 3px solid var(--card-border-highlight);
+}
+
+.section-actions {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* --- Call to Action (CTA) Section --- */
+.cta-section {
+  padding: 5rem 1rem;
+  background: var(--primary-gradient);
+  color: white;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* --- Button Styles --- */
+.cta-button {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cta-button.primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.cta-button.primary:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-button.secondary:hover {
+  background: white;
+  color: var(--primary-color);
+  border-color: white;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid .dark-service-card:first-child {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 80vh;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cta-button {
+    width: 80%;
+    max-width: 300px;
+  }
+  .page-section {
+    padding: 4rem 1rem;
+  }
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .page-section {
+    padding: 3rem 1rem;
+  }
+}
